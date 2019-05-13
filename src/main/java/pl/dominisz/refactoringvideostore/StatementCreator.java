@@ -7,12 +7,10 @@ public class StatementCreator {
     public static String create(Customer customer) {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
-        Enumeration rentals = customer.getRentals().elements();
         String result = "Rental Record for " + customer.getName() + "\n";
 
-        while (rentals.hasMoreElements()) {
+        for (Rental each: customer.getRentals()) {
             double thisAmount = 0;
-            Rental each = (Rental) rentals.nextElement();
 
             // determines the amount for each line
             switch (each.getMovie().getPriceCode()) {
