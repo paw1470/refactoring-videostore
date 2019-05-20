@@ -26,7 +26,7 @@ public class CustomerTest {
     @Test
     public void shouldCreateStatementWithRegularMovie() {
         Customer customer = new Customer("customer");
-        customer.addRental(new Rental(new Movie("movie1", Movie.REGULAR), 10));
+        customer.addRental(new Rental(new RegularMovie("movie1"), 10));
 
         String expectedStatement = "Rental Record for customer\n"
                                    + "\tmovie1\t14.0\n"
@@ -40,7 +40,7 @@ public class CustomerTest {
     @Test
     public void shouldCreateStatementWithNewReleaseMovie() {
         Customer customer = new Customer("customer");
-        customer.addRental(new Rental(new Movie("movie2", Movie.NEW_RELEASE), 20));
+        customer.addRental(new Rental(new NewReleaseMovie("movie2"), 20));
 
         String expectedStatement = "Rental Record for customer\n"
                                    + "\tmovie2\t60.0\n"
@@ -54,7 +54,7 @@ public class CustomerTest {
     @Test
     public void shouldCreateStatementWithChildrensMovie() {
         Customer customer = new Customer("customer");
-        customer.addRental(new Rental(new Movie("movie3", Movie.CHILDRENS), 30));
+        customer.addRental(new Rental(new ChildrensMovie("movie3"), 30));
 
         String expectedStatement = "Rental Record for customer\n"
                                    + "\tmovie3\t42.0\n"
@@ -68,9 +68,9 @@ public class CustomerTest {
     @Test
     public void shouldCreateStatementWithThreeMovies() {
         Customer customer = new Customer("customer");
-        customer.addRental(new Rental(new Movie("movie1", Movie.REGULAR), 10));
-        customer.addRental(new Rental(new Movie("movie2", Movie.NEW_RELEASE), 20));
-        customer.addRental(new Rental(new Movie("movie3", Movie.CHILDRENS), 30));
+        customer.addRental(new Rental(new RegularMovie("movie1"), 10));
+        customer.addRental(new Rental(new NewReleaseMovie("movie2"), 20));
+        customer.addRental(new Rental(new ChildrensMovie("movie3"), 30));
 
         String expectedStatement = "Rental Record for customer\n"
                                    + "\tmovie1\t14.0\n"
