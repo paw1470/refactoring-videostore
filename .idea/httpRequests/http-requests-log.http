@@ -1,0 +1,12 @@
+GET http://vps656923.ovh.net:9966/petclinic/api/pets
+
+<> 2019-05-20T060642.200.json
+
+###
+
+GET http://vps656923.ovh.net:9966/petclinic/pets
+
+<> 2019-05-20T060632.404.json
+
+###
+

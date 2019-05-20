@@ -7,11 +7,15 @@ public class RegularMovie extends Movie {
 
     @Override
     public double getAmount(int daysRented) {
-        return 0;
+        double amount = 2;
+        if (daysRented > 2) {
+            amount += (daysRented - 2) * 1.5;
+        }
+        return amount;
     }
 
     @Override
     public int getRenterPoints(int daysRented) {
-        return 0;
+        return 1;
     }
 }
